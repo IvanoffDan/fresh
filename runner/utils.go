@@ -24,13 +24,13 @@ func isTmpDir(path string) bool {
 }
 
 func isIgnoredFolder(path string) bool {
+	watcherLog("path: %v", path)
 	paths := strings.Split(path, "/")
 	if len(paths) <= 0 {
 		return false
 	}
 
 	for _, e := range strings.Split(settings["ignored"], ",") {
-		watcherLog("path: %v", path)
 		watcherLog("ignore: %v", strings.TrimSpace(e))
 		if strings.HasPrefix(path, strings.TrimSpace(e)) {
 			return true
