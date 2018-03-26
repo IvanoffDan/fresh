@@ -1,7 +1,6 @@
 package runner
 
 import (
-	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
@@ -31,8 +30,8 @@ func isIgnoredFolder(path string) bool {
 	}
 
 	for _, e := range strings.Split(settings["ignored"], ",") {
-		fmt.Println("path: %v", path)
-		fmt.Println("ignore: %v", strings.TrimSpace(e))
+		watcherLog("path: %v", path)
+		watcherLog("ignore: %v", strings.TrimSpace(e))
 		if strings.HasPrefix(path, strings.TrimSpace(e)) {
 			return true
 		}
