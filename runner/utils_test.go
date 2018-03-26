@@ -57,6 +57,7 @@ func TestIsIgnoredFolder(t *testing.T) {
 		{"assets/node_modules", true},
 		{"tmp/pid", true},
 		{"app/controllers", false},
+		{"/src/vendor/github.com/", true},
 	}
 
 	for _, test := range tests {
